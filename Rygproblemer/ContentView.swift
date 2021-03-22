@@ -6,17 +6,27 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    var item: NSStatusItem!
+    var popover: NSPopover!
+    var icon: String
+
     var body: some View {
-        Text("Hello, World!")
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        HStack {
+            Button(action: {
+                popover.performClose("")
+            }) {
+                Text("⚡️ Ret dig op!")
+                    .fontWeight(.semibold)
+                    .font(.body)
+                    .padding(0)
+            }
+
+        }
+        .padding(50)
     }
+
 }
 
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
